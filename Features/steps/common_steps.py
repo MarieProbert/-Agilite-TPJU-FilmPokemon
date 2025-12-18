@@ -6,7 +6,6 @@ from Models.film import Film
 def step_impl_common_creation_pokemon(context, nom):
     context.pokemon = Pokemon(nom, "Normal", "Normal")
 
-@given('un film intitulé "{titre_film}"')
-def step_impl_common_film(context, titre_film):
+@given('un film intitulé')
+def step_impl_common_film(context):
     context.film = Film()
-    context.film.titre = titre_film
