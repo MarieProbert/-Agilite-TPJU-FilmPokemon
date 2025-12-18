@@ -1,5 +1,5 @@
 from behave import given, when, then
-from film import Film 
+from Models.film import Film 
 
 @given('un film')
 def step_impl(context):

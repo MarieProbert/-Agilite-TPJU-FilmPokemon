@@ -73,7 +73,7 @@ class TestDresseur(unittest.TestCase):
         self.assertEqual(self.dresseur.nom, "Régis")
 
     def test_get_nom(self):
-        self.assertEqual("self.dresseur.get_nom()", "Sacha")
+        self.assertEqual(self.dresseur.get_nom(), "Sacha")
 
     def test_get_inventaire(self):
         self.dresseur.ajouter_pokeball(self.pokeball)

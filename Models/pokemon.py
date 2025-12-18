@@ -1,9 +1,11 @@
 class Pokemon:
-    def __init__(self, nom, type1, type2, pokeball=None):
+    def __init__(self, nom, type1, type2, pokeball=None, capacite=None):
         self.type1 = type1
         self.type2 = type2
         self.pokeball = pokeball
         self.nom = nom
+        if pokeball is not None:
+            self.capacite = capacite
         if pokeball is not None:
             self.pokeball.pokemon = self
 
@@ -21,4 +23,10 @@ class Pokemon:
 
     def get_pokeball(self):
         return self.pokeball
+    
+    def utiliser_capacite(self):
+        if self.capacite is not None:
+            return f"{self.nom} utilise {self.capacite}!"
+        else:
+            return "Ce Pokémon n'a pas de capacité assignée."
     
