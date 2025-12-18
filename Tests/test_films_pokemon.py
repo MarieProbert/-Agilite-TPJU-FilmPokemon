@@ -98,9 +98,14 @@ class TestCoverageComplementaire(unittest.TestCase):
         # Teste l'adapter spécifique
         pika = Pokemon("Pikachu", "Electrik", None, capacite="Eclair")
         adapter = PokemonAdapter(pika)
-        # Le nom dans l'adapter est le nom de la classe 'Pokemon'
-        self.assertEqual(adapter.get_nom(), "Pokemon")
-        self.assertEqual(adapter.jouer_scene(), "Pikachu utilise Eclair!")
+        
+        # CORRECTION 1 : L'adapter utilise maintenant le vrai nom du Pokémon (Pikachu), pas "Pokemon"
+        self.assertEqual(adapter.get_nom(), "Pikachu")
+        
+        # CORRECTION 2 : L'adapter renvoie maintenant une phrase contextuelle avec le film
+        # Comme on n'a pas mis de film, il va dire "un film inconnu" (logique de votre Adapter)
+        attendu = "Pikachu joue dans un film inconnu et utilise Eclair"
+        self.assertEqual(adapter.jouer_scene(), attendu)
 
     def test_acteur_factory_humain(self):
         acteur = ActeurFactory.creer_acteur("humain", "Tom Hanks", "Bonjour", Film())
