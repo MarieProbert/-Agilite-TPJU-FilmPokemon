@@ -6,10 +6,6 @@ from Models.realisateur import Realisateur
 def step_impl(context, nom_real):
     context.real = Realisateur(nom_real)
 
-@given('un film intitulé "{titre_film}"')
-def step_impl(context, titre_film):
-    context.film = Film()
-
 @when('j\'ajoute le film "{titre_film}" à la liste du réalisateur "{nom_real}"')
 def step_impl(context, titre_film, nom_real):
     context.real.ajouter_film(context.film)
