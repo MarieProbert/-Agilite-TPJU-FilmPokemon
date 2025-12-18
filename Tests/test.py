@@ -68,7 +68,7 @@ class TestActeurFactory(unittest.TestCase):
 
     def test_creer_acteur_pokemon_nom(self): 
         acteur_pika = ActeurFactory.creer_acteur("pokemon", "Pikachu", "Pika!")
-        self.assertEqual(acteur_pika.get_nom(), "Pokemon")
+        self.assertEqual(acteur_pika.get_nom(), "Pikachu")
 
     def test_creer_acteur_erreur(self):
         with self.assertRaises(ValueError):
