@@ -1,6 +1,6 @@
 from behave import given, when, then
-from film import Film
-from realisateur import Realisateur
+from Models.film import Film
+from Models.realisateur import Realisateur
 
 @given('un réalisateur nommé "{nom_real}"')
 def step_impl(context, nom_real):

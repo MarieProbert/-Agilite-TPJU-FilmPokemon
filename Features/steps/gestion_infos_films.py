@@ -1,6 +1,6 @@
 from behave import given, when, then
-from film import Film
-from categorie import Categorie
+from Models.film import Film
+from Models.categorie import Categorie
 
 @given('un nouveau film est créé')
 def step_impl_creation(context):

@@ -1,4 +1,4 @@
-from categorie import Categorie
+from Models.categorie import Categorie
 
 class Film:
     def __init__(self):

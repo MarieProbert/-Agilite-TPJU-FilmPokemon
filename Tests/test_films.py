@@ -1,6 +1,11 @@
 import unittest
-from film import Film, Categorie
-from realisateur import Realisateur
+import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
+
+from Models.film import Film, Categorie
+from Models.realisateur import Realisateur
 
 class TestFilm(unittest.TestCase):
 
