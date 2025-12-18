@@ -1,6 +1,6 @@
 from Models.acteur import Acteur
 from Models.pokemon import Pokemon
-from Models.pokemon_adapter import PokemonAdapter
+from Models.pokemon_acteur_adapter import PokemonAdapter
 
 class ActeurFactory:
     @staticmethod

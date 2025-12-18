@@ -15,7 +15,7 @@ class Acteur:
     def get_film(self) -> Film:
         return self._film
 
-    def set_nom(self, film: Film):
+    def set_film(self, film: Film):
         self._film = film
 
     def jouer_scene(self):

@@ -4,10 +4,14 @@ class Pokemon:
         self.type2 = type2
         self.pokeball = pokeball
         self.nom = nom
-        if pokeball is not None:
+        if capacite is not None:
             self.capacite = capacite
+        else:
+            self.capacite = None
         if pokeball is not None:
             self.pokeball.pokemon = self
+        else:
+            self.pokeball = None
 
     def get_type1(self):
         return self.type1
