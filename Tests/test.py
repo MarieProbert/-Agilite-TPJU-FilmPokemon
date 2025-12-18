@@ -96,13 +96,13 @@ class TestDresseur(unittest.TestCase):
     def setUp(self):
         self.dresseur = Dresseur("Sacha")
         self.pokemon = Pokemon("Pikachu", "Électrik", None)
-        self.pokeball = Pokeball(prix=200)
+        self._pokeball = Pokeball(prix=200)
 
     def test_gestion_pokemon(self):
-        self.dresseur.capturer_pokemon(self.pokemon, self.pokeball)
-        self.assertEqual(self.pokeball._pokemon, self.pokemon)
-        self.dresseur.liberer_pokemon(self.pokeball)
-        self.assertIsNone(self.pokeball._pokemon)
+        self.dresseur.capturer_pokemon(self.pokemon, self._pokeball)
+        self.assertEqual(self._pokeball._pokemon, self.pokemon)
+        self.dresseur.liberer_pokemon(self._pokeball)
+        self.assertIsNone(self._pokeball._pokemon)
 
 class TestFilm(unittest.TestCase):
     def setUp(self):

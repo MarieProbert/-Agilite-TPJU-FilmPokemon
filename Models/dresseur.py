@@ -16,9 +16,9 @@ class Dresseur:
         pokeball.capturer_pokemon(pokemon)
 
     def liberer_pokemon(self, pokeball):
-        if pokeball.pokemon is not None:
+        if pokeball._pokemon is not None:
             self.nettoyer_lien_pokemon_pokeball(pokeball)
 
     def nettoyer_lien_pokemon_pokeball(self, pokeball):
-        pokeball.pokemon.pokeball = None
-        pokeball.pokemon = None
+        pokeball._pokemon.set_pokeball(None)
+        pokeball._pokemon = None

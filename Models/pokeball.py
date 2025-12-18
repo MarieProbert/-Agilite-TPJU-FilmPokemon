@@ -1,13 +1,10 @@
 class Pokeball:
     def __init__(self, prix, pokemon=None, dresseur=None):
         self._prix = prix
-        self._pokemon = pokemon
+        self._pokemon = pokemon 
+        self._dresseur = dresseur
         if pokemon is not None:
-                pokemon.pokeball = self
-        if dresseur is not None:
-                self._dresseur = dresseur
-        else:
-            self._dresseur = None
+            pokemon.set_pokeball(self)
 
     def afficher_type_pokemon(self):
         if self._pokemon is None:
@@ -26,8 +23,10 @@ class Pokeball:
     def capturer_pokemon(self, pokemon):
         if self._pokemon is not None:
             raise Exception("La Pokeball contient déjà un Pokémon.")
-        if pokemon.pokeball is not None:
+        
+        if pokemon.get_pokeball() is not None:
             raise Exception("Le Pokémon est déjà dans une Pokeball.")
+            
         self._pokemon = pokemon
-        pokemon.pokeball = self
+        pokemon.set_pokeball(self)
         return True
