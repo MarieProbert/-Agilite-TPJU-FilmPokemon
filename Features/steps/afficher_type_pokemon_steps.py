@@ -10,7 +10,7 @@ def step_given_pokemon_types(context, type1, type2):
 @given('une Pokéball contenant ce Pokémon')
 def step_given_pokeball_with_pokemon(context):
     context.pokeball = Pokeball(600, context.pokemon)
-    context.pokemon.pokeball = context.pokeball
+    context.pokemon.set_pokeball(context.pokeball)
 
 @when("J'affiche le type du Pokémon via la Pokéball")
 def step_when_afficher_type(context):

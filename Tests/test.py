@@ -78,7 +78,7 @@ class TestPokeball(unittest.TestCase):
     def test_init_avec_objets(self): 
         pika = Pokemon("Pika", "Elec", None)
         pball = Pokeball(200, pika)
-        self.assertEqual(pball.pokemon, pika)
+        self.assertEqual(pball._pokemon, pika)
 
     def test_afficher_types_complet(self): 
         pb = Pokeball(100)
@@ -100,9 +100,9 @@ class TestDresseur(unittest.TestCase):
 
     def test_gestion_pokemon(self):
         self.dresseur.capturer_pokemon(self.pokemon, self.pokeball)
-        self.assertEqual(self.pokeball.pokemon, self.pokemon)
+        self.assertEqual(self.pokeball._pokemon, self.pokemon)
         self.dresseur.liberer_pokemon(self.pokeball)
-        self.assertIsNone(self.pokeball.pokemon)
+        self.assertIsNone(self.pokeball._pokemon)
 
 class TestFilm(unittest.TestCase):
     def setUp(self):

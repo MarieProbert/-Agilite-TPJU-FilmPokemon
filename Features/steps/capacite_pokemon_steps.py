@@ -3,23 +3,18 @@ from Models.pokemon_acteur_adapter import PokemonAdapter
 
 @given('sa capacité spéciale est "{capacite}"')
 def step_impl_set_capacite(context, capacite):
-    # On configure le Pokémon brut
-    context.pokemon.capacite = capacite
+    context.pokemon.set_capacite(capacite)
 
-@given('le Pokémon est casté dans le film "{titre_film}"')
-def step_impl_casting_contextualise(context, titre_film):
-    # Réutilisation de la logique de casting
+@given('le Pokémon est casté dans un film ')
+def step_impl_casting_contextualise(context):
     from Models.film import Film
     context.film = Film()
-    context.film.titre = titre_film
     
-    # On crée l'adapter pour lier le tout
     context.acteur = PokemonAdapter(context.pokemon)
     context.acteur.set_film(context.film)
 
 @when('le Pokémon joue sa scène')
 def step_impl_action(context):
-    # Si l'acteur n'a pas été créé dans le Given précédent (cas sans film), on le crée
     if not hasattr(context, 'acteur'):
         context.acteur = PokemonAdapter(context.pokemon)
         

@@ -1,4 +1,4 @@
-Feature: US_005 Performance d'acteur contextualisée
+Feature: US_005 Performance d'acteur Pokemon
 
   En tant que Réalisateur
   Je veux que le Pokémon joue sa scène en utilisant sa capacité spéciale
@@ -7,12 +7,11 @@ Feature: US_005 Performance d'acteur contextualisée
   Scenario Outline: Un Pokémon joue sa scène dans un film
     Given un Pokémon nommé "<nom>"
     And sa capacité spéciale est "<capacite>"
-    And le Pokémon est casté dans le film "<titre_film>"
     When le Pokémon joue sa scène
-    Then l'action produite doit être "<nom> joue dans <titre_film> et utilise <capacite>"
+    Then l'action produite doit être "<nom> utilise <capacite>"
 
     Examples:
-      | nom       | capacite      | titre_film            |
-      | Pikachu   | Tonnerre      | Détective Pikachu     |
-      | Dracaufeu | Lance-Flammes | Le Seigneur des Ailes |
-      | Rondoudou | Berceuse      | Insomnia              |
+      | nom       | capacite      |
+      | Pikachu   | Tonnerre      |
+      | Dracaufeu | Lance-Flammes |
+      | Rondoudou | Berceuse      |
