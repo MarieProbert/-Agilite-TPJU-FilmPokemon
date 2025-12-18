@@ -6,6 +6,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + "/..")
 
 from Models.film import Film, Categorie
 from Models.realisateur import Realisateur
+from Models.acteur import Acteur
 
 class TestFilm(unittest.TestCase):
 
@@ -14,7 +15,7 @@ class TestFilm(unittest.TestCase):
         self.kill_bill = Film()
         self.action = Categorie()
         self.real = Realisateur("Quentin Tarantino")
-        
+        self.acteur = Acteur("John Travolta")
         self.action.set_nom("Action")
         self.kill_bill.set_categorie(self.action)
 
@@ -24,6 +25,9 @@ class TestFilm(unittest.TestCase):
     def test_set_duree(self):
         self.kill_bill.set_duree(111)
         self.assertEqual(111, self.kill_bill.get_duree())
+
+    def test_set_acteur(self):
+        self.assertEqual("John Travolta", self.acteur.get_nom())
 
     def test_set_realisateur(self):
         self.assertEqual("Quentin Tarantino", self.real.get_nom())
