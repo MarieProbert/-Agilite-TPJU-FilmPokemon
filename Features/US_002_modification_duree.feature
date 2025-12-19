@@ -1,4 +1,4 @@
-Feature: US_001 Modifier la durée du film
+Feature: US_002 Modifier la durée du film
 
   En tant que Administrateur
   Je veux modifier la durée d'un film
